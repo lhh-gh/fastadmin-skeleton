@@ -1,0 +1,4 @@
+interface:
+  display_name: "MySQL 本地开发库"
+  short_description: "读取本地 MySQL 配置，检查表结构、执行查询与已授权 SQL 变更"
+  default_prompt: "请使用 $mysql-dev-db 读取当前项目数据库配置并检查本地 MySQL 连接及表结构。"

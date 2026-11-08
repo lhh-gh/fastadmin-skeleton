@@ -1,0 +1,26 @@
+diff --git a/components/common/util.ts b/components/common/util.ts
+index 6890d248bc993a91a9aba1807061263c1e49c12a..095fe557f2eabb048f7617a7f573d4b2d922fa22 100644
+--- a/components/common/util.ts
++++ b/components/common/util.ts
+@@ -55,7 +55,7 @@ export function getType(target: unknown): string {
+  * @param kv - 配置对象，包含 labelKey 作为键值
+  * @returns 格式化后的字符串
+  */
+-export const defaultDisplayFormat = function (items: any[] | Record<string, any>, kv?: { labelKey?: string }): string {
++export const defaultDisplayFormat = function (items: any[] | Record<string, any>, kv?: { valueKey?: string; labelKey?: string }): string {
+   const labelKey: string = kv?.labelKey || 'value'
+ 
+   if (Array.isArray(items)) {
+diff --git a/components/composables/useUpload.ts b/components/composables/useUpload.ts
+index 87cf54b7982609d8c12e49f95d7fbfaba9310e8a..8b41115628c2a316368f2af7b87a359f7ca93c01 100644
+--- a/components/composables/useUpload.ts
++++ b/components/composables/useUpload.ts
+@@ -172,7 +172,7 @@ export function useUpload(): UseUploadReturn {
+         path: item.path || '',
+         name: item.name || '',
+         size: item.size,
+-        type: 'image',
++        type: 'image' as const,
+         thumb: item.path || ''
+       }))
+     }

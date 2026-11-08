@@ -1,0 +1,4 @@
+interface:
+  display_name: "FastAdmin 开发"
+  short_description: "按项目约定完成 FastAdmin CRUD、关联查询、菜单权限与页面排错"
+  default_prompt: "请使用 $fastadmin 按当前仓库约定完成 FastAdmin 开发任务，并验证相关页面和命令。"
